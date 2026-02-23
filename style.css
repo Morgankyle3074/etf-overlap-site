@@ -69,18 +69,11 @@ body{
   padding: 40px 0;
 }
 
-/* ✅ KEY: make the two hero columns same height */
 .hero-grid{
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   gap: 22px;
-  align-items: stretch; /* IMPORTANT */
-}
-
-/* ✅ Allow left side to stretch to match right */
-.hero-left{
-  display: flex;
-  flex-direction: column;
+  align-items: start;
 }
 
 /* CARDS */
@@ -105,23 +98,14 @@ body{
   border-top: 1px solid var(--border);
 }
 
-/* TEXT */
-.subtitle{
-  color: var(--muted);
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-.muted{
-  color: var(--muted);
-}
-
+/* ✅ TEXT WIDTH FIX */
 .card p{
   max-width: 820px;
   line-height: 1.75;
   font-size: 15.5px;
 }
 
+/* Paragraph rhythm */
 .card p + p{
   margin-top: 10px;
 }
@@ -133,32 +117,35 @@ body{
   border-radius: 10px;
 }
 
-/* ✅ PAPER FIX: make paper card match left height + iframe fill */
+/* ✅ PAPER PANEL FIX (this is the key) */
 .paper-card{
-  /* override normal card padding so iframe can fill */
+  /* remove the big padding so the iframe can fill */
   padding: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
-/* Keep header nicely padded even though card padding is removed */
+/* keep header padded even though card padding is removed */
 .paper-card .card-header{
   padding: 18px 22px 12px;
   margin: 0;
-  border-bottom: 1px solid var(--border);
 }
 
-/* iframe fills remaining space */
+/* the iframe takes the rest of the card height */
 .paper-frame{
   flex: 1;
   width: 100%;
   border: none;
-  min-height: 0;
   border-radius: 0 0 var(--radius) var(--radius);
+
+  /* This makes it tall like you want */
+  height: 950px;
+
+  /* For Chrome/Safari to avoid weird shrink behavior */
+  min-height: 950px;
 }
 
-/* Keep .pdf class (not used for height anymore) */
+/* Keep .pdf class for other uses too */
 .pdf{
   width: 100%;
   border: none;
@@ -179,14 +166,14 @@ body{
   font-size: 14px;
 }
 
-/* CHART GRID */
+/* GRID */
 .two-col{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
 
-/* Equal-height chart cards */
+/* ✅ Equal height charts */
 .two-col.equal{
   align-items: stretch;
 }
@@ -247,23 +234,8 @@ body{
   background: var(--bg);
 }
 
-/* SPACING */
-.mt{
-  margin-top: 26px;
-}
-
 /* STICKY paper card */
 .sticky{
   position: sticky;
   top: 90px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px){
-  .hero-grid{
-    grid-template-columns: 1fr;
-  }
-  .two-col{
-    grid-template-columns: 1fr;
-  }
 }
