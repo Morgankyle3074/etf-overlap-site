@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETF Overlap & Hidden Concentration Risk</title>
+  <meta name="description" content="Holdings-level overlap and concentration analysis across QQQ, SCHD, SPY, and VOO." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>ETF Overlap Analysis</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#paper">Paper</a>
+        <a href="#findings">Findings</a>
+        <a href="#charts">Charts</a>
+        <a href="#interpretation">Interpretation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="overview">
+    <div class="container hero-grid">
+      <!-- Left: Title + Summary + Tableau screenshot -->
+      <div class="hero-left">
+        <h1>Hidden Concentration in ETF Portfolios</h1>
+        <p class="subtitle">
+          A holdings-level study of overlap, weighting effects, and structural diversification risk across
+          QQQ, SCHD, SPY, and VOO.
+        </p>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Tableau Dashboard Preview</h2>
+            <p class="muted">Screenshot from the interactive dashboard.</p>
+          </div>
+          <img
+            class="img"
+            src="assets/tableau-main.png"
+            alt="Tableau dashboard screenshot showing overlap and concentration visuals"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Right: Embedded Paper -->
+      <aside class="hero-right" id="paper">
+        <div class="card sticky">
+          <div class="card-header row">
+            <div>
+              <h2>Read the Paper</h2>
+              <p class="muted">Embedded PDF (scroll inside to read).</p>
+            </div>
+            <a class="button button-outline"
+               href="assets/Hidden%20Concentration%20in%20ETF%20Portfolios.pdf"
+               target="_blank" rel="noreferrer">
+              Open PDF
+            </a>
+          </div>
+
+          <iframe
+            class="pdf"
+            src="assets/Hidden%20Concentration%20in%20ETF%20Portfolios.pdf"
+            title="Hidden Concentration in ETF Portfolios (PDF)"
+          ></iframe>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Business Question + Findings screenshot -->
+  <section class="section" id="findings">
+    <div class="container">
+      <div class="section-head">
+        <h2>Business Question & Key Finding</h2>
+        <p class="muted">
+          How often does “ETF stacking” create real diversification versus duplicated economic exposure?
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-header">
+            <h3>Business Problem</h3>
+          </div>
+          <p>
+            Investors often combine ETFs by fund label (growth, dividend, broad market) and assume
+            diversification improves automatically. But ETFs frequently share many of the same
+            underlying holdings—especially cap-weighted funds—creating hidden duplication of exposure.
+          </p>
+          <p class="muted small">
+            (Summarized from the paper’s “Business Problem” section.) 
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Finding Unearthed (Dashboard)</h3>
+            <p class="muted">A second screenshot focused on the “so what”.</p>
+          </div>
+          <img
+            class="img"
+            src="assets/tableau-findings.png"
+            alt="Tableau findings screenshot"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts: two side-by-side + descriptions -->
+  <section class="section" id="charts">
+    <div class="container">
+      <div class="section-head">
+        <h2>Charts & What They Show</h2>
+        <p class="muted">
+          These visuals translate holdings-level overlap and concentration into interpretable evidence.
+        </p>
+      </div>
+
+      <!-- Side-by-side charts -->
+      <div class="two-col">
+        <div class="card">
+          <div class="card-header">
+            <h3>Weighted Overlap Ranking</h3>
+          </div>
+          <img
+            class="img"
+            src="assets/chart-overlap-bars.png"
+            alt="Bar chart ranking weighted overlap by ETF pair"
+            loading="lazy"
+          />
+          <div class="desc">
+            <p>
+              This ranking highlights which ETF pairs create the greatest redundancy. The largest overlap
+              appears between SPY and VOO (about ~65%), suggesting they behave as near substitutes even
+              though they are different funds. Secondary pairs (QQQ vs VOO, QQQ vs SPY) remain material.
+            </p>
+            <p class="muted small">
+              (Aligned with the paper’s “Weighted overlap dominance” discussion.)
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Weighted Overlap Heatmap</h3>
+          </div>
+          <img
+            class="img"
+            src="assets/chart-heatmap.png"
+            alt="Heatmap of weighted overlap among QQQ SCHD SPY VOO"
+            loading="lazy"
+          />
+          <div class="desc">
+            <p>
+              The heatmap shows overlap intensity across ETFs. Darker cells mean higher economic
+              duplication (not just shared tickers, but shared weights). It makes “hidden concentration”
+              visible—adding more ETFs can increase complexity without adding meaningful diversification.
+            </p>
+            <p class="muted small">
+              (Aligned with the paper’s “Hidden concentration effects” interpretation.)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third chart under the two -->
+      <div class="card mt">
+        <div class="card-header">
+          <h3>Structural Concentration Differences (Top Holdings by ETF)</h3>
+        </div>
+        <img
+          class="img"
+          src="assets/chart-holdings.png"
+          alt="Small multiples bar chart showing top holdings and average weights for each ETF"
+          loading="lazy"
+        />
+        <div class="desc">
+          <p>
+            This view compares how each ETF concentrates weight in its top constituents. QQQ shows
+            heavier concentration in leading names (growth-heavy structure), while SCHD appears more
+            distributed. SPY and VOO are broad but still inherit cap-weighting skewness.
+          </p>
+          <p class="muted small">
+            (Summarized from the paper’s “Structural Concentration differences” section.)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Interpretation / Thought Process -->
+  <section class="section" id="interpretation">
+    <div class="container">
+      <div class="section-head">
+        <h2>What This Means</h2>
+        <p class="muted">The big takeaway: count ETFs less—analyze holdings more.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Project Thought Process</h3>
+        </div>
+
+        <p>
+          ETFs are diversified individually, but when you combine multiple ETFs, diversification must be
+          evaluated at the holdings level. This project reframes each ETF as a weighted basket of
+          securities and measures overlap using weight-adjusted intersection to capture true economic
+          redundancy.
+        </p>
+
+        <p>
+          The results show overlap is structurally embedded in cap-weighted index construction. Some
+          combinations (especially SPY + VOO) provide limited incremental diversification, while still
+          increasing portfolio complexity. Weighting methodology influences risk: concentrated top
+          weights can dominate portfolio behavior even if total holding count is high.
+        </p>
+
+        <p class="muted small">
+          (This section is based on the paper’s methodology, key findings, and implications.) 
+          :contentReference[oaicite:1]{index=1}
+        </p>
+
+        <div class="callout">
+          <strong>Investor takeaway:</strong>
+          Don’t assume “more ETFs = more diversification.” Evaluate overlap and concentration explicitly,
+          especially in markets dominated by a small set of large-cap names.
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <span class="muted small">© <span id="year"></span> Kyle Morgan — ETF Overlap Project</span>
+          <a class="muted small" href="#overview">Back to top ↑</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
