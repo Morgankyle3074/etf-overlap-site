@@ -238,3 +238,29 @@ body{
   position: sticky;
   top: 90px;
 }
+
+.insight-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.insight{
+  padding: 14px 16px;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.insight h4{
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.insight p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
