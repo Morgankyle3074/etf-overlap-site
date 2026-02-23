@@ -107,12 +107,14 @@
       <p class="muted">Quantifying overlap, redundancy, and concentration effects.</p>
     </div>
 
-    <div class="two-col">
+    <div class="two-col equal">
 
+      <!-- HEATMAP -->
       <div class="card">
         <div class="card-header">
           <h3>Weighted Overlap Heatmap</h3>
         </div>
+
         <img class="img" src="assets/chart-heatmap.png" />
 
         <div class="desc">
@@ -122,21 +124,41 @@
         </div>
       </div>
 
+      <!-- RANKING -->
       <div class="card">
         <div class="card-header">
           <h3>Weighted Overlap Ranking</h3>
         </div>
+
         <img class="img" src="assets/chart-overlap-bars.png" />
 
         <div class="desc">
-          This ranking highlights dominant ETF pairings contributing to portfolio redundancy.
-          SPY vs VOO exhibits the highest overlap, indicating near economic substitutability
-          despite differing provider identities.
+          The ranking visualization orders ETF pairings by weighted overlap magnitude,
+          emphasizing the uneven distribution of redundancy risk. Overlap concentration
+          is driven by structural similarity rather than fund classification alone.
         </div>
       </div>
 
     </div>
 
+    <!-- ETF PAIRING (RENAMED SECTION) -->
+    <div class="card mt">
+      <div class="card-header">
+        <h3>ETF Pairing</h3>
+        <p class="muted">How overlap dynamics manifest across fund combinations.</p>
+      </div>
+
+      <img class="img" src="assets/tableau-findings.png" />
+
+      <div class="desc">
+        This ranking highlights dominant ETF pairings contributing to portfolio redundancy.
+        SPY vs VOO exhibits the highest overlap, indicating near economic substitutability
+        despite differing provider identities.
+      </div>
+    </div>
+
+  </div>
+</section>
     <!-- DASHBOARD SNAPSHOT -->
     <div class="card mt">
       <div class="card-header">
