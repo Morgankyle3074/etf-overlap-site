@@ -44,12 +44,12 @@
           <p class="muted">Interactive visualization of overlap & concentration metrics.</p>
         </div>
 
-        <img class="img" src="assets/tableau-main.png" />
+        <img class="img" src="assets/tableau-main.png" alt="Tableau dashboard preview" />
 
         <div class="card-footer">
           <a class="button button-outline"
              href="https://public.tableau.com/app/profile/kyle.morgan3469/viz/HiddenconcetrationinETFPortfolios/Dashboard1?publish=yes"
-             target="_blank">
+             target="_blank" rel="noreferrer">
              View Interactive Dashboard (Tableau Public)
           </a>
         </div>
@@ -64,7 +64,7 @@
           <p class="muted">Full project methodology & findings.</p>
         </div>
 
-        <iframe class="pdf" src="assets/Hidden%20Concentration%20in%20ETF%20Portfolios.pdf"></iframe>
+        <iframe class="pdf" src="assets/Hidden%20Concentration%20in%20ETF%20Portfolios.pdf" title="Research Paper"></iframe>
       </div>
     </aside>
 
@@ -81,17 +81,17 @@
 
     <div class="card">
       <p>
-        Investors frequently construct portfolios by combining ETFs based on fund labels, themes,
-        or classifications. While ETFs are diversified individually, portfolios composed of multiple ETFs
-        may not generate additive diversification benefits. Overlapping holdings can create duplicated
-        economic exposure, resulting in hidden concentration risk.
+        Investors frequently construct portfolios by combining ETFs based on fund labels, themes, or classifications.
+        While ETFs are diversified individually, portfolios composed of multiple ETFs may not generate additive
+        diversification benefits. Overlapping holdings can create duplicated economic exposure, resulting in hidden
+        concentration risk.
       </p>
 
       <p>
-        This structural redundancy is particularly relevant in markets characterized by elevated
-        capitalization concentration, where a relatively small subset of securities dominate index
-        weighting. As ETFs increasingly inherit these weighting structures, portfolios that appear
-        diversified at the fund level may exhibit significant concentration at the holdings level.
+        This structural redundancy is particularly relevant in markets characterized by elevated capitalization
+        concentration, where a relatively small subset of securities dominate index weighting. As ETFs increasingly
+        inherit these weighting structures, portfolios that appear diversified at the fund level may exhibit
+        significant concentration at the holdings level.
       </p>
     </div>
 
@@ -115,7 +115,7 @@
           <h3>Weighted Overlap Heatmap</h3>
         </div>
 
-        <img class="img" src="assets/chart-heatmap.png" />
+        <img class="img" src="assets/chart-heatmap.png" alt="Weighted overlap heatmap" />
 
         <div class="desc">
           The heatmap illustrates the intensity of holdings-level overlap between ETFs.
@@ -130,57 +130,18 @@
           <h3>Weighted Overlap Ranking</h3>
         </div>
 
-        <img class="img" src="assets/chart-overlap-bars.png" />
+        <img class="img" src="assets/chart-overlap-bars.png" alt="Weighted overlap ranking bar chart" />
 
         <div class="desc">
           The ranking visualization orders ETF pairings by weighted overlap magnitude,
-          emphasizing the uneven distribution of redundancy risk. Overlap concentration
-          is driven by structural similarity rather than fund classification alone.
+          emphasizing that redundancy risk is not evenly distributed. This highlights how a few
+          structurally similar pairings can dominate overall portfolio overlap.
         </div>
       </div>
 
     </div>
 
-    <!-- ETF PAIRING (RENAMED SECTION) -->
-    <div class="card mt">
-      <div class="card-header">
-        <h3>ETF Pairing</h3>
-        <p class="muted">How overlap dynamics manifest across fund combinations.</p>
-      </div>
-
-      <img class="img" src="assets/tableau-findings.png" />
-
-      <div class="desc">
-        This ranking highlights dominant ETF pairings contributing to portfolio redundancy.
-        SPY vs VOO exhibits the highest overlap, indicating near economic substitutability
-        despite differing provider identities.
-      </div>
-    </div>
-
-  </div>
-</section>
-    <!-- DASHBOARD SNAPSHOT -->
-    <div class="card mt">
-      <div class="card-header">
-        <h3>Dashboard View</h3>
-        <p class="muted">How overlap & concentration connect.</p>
-      </div>
-      <img class="img" src="assets/tableau-findings.png" />
-    </div>
-
-    <!-- HOLDINGS -->
-    <div class="card mt">
-      <div class="card-header">
-        <h3>Structural Concentration Differences</h3>
-      </div>
-      <img class="img" src="assets/chart-holdings.png" />
-
-      <div class="desc">
-        Concentration metrics reveal meaningful differences across ETF structures.
-        Weighting frameworks exert a stronger influence on portfolio behavior than nominal
-        holding counts.
-      </div>
-    </div>
+    <!-- ✅ REMOVED: the extra mid-page dashboard / structural concentration sections -->
 
   </div>
 </section>
@@ -194,7 +155,6 @@
     </div>
 
     <div class="card">
-
       <p>
         Traditional diversification analysis often evaluates portfolios at the fund level.
         This project reframes ETFs as weighted baskets of securities, enabling holdings-level
@@ -209,16 +169,14 @@
       </ul>
 
       <p>
-        The findings demonstrate that diversification assumptions based solely on fund variety
-        may be misleading. Structural weighting and overlap dynamics materially influence
-        portfolio concentration and risk exposure.
+        The findings demonstrate that diversification assumptions based solely on fund variety may be misleading.
+        Structural weighting and overlap dynamics materially influence portfolio concentration and risk exposure.
       </p>
 
       <div class="callout">
         <strong>Investor Takeaway:</strong>
         Diversification must be evaluated at the holdings level, not inferred from ETF labels.
       </div>
-
     </div>
 
   </div>
