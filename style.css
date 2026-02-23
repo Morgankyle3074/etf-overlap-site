@@ -9,21 +9,31 @@
   --radius: 14px;
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.55;
 }
+
+/* ---------- LAYOUT ---------- */
 
 .container{
   width: min(1100px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-/* HEADER */
+.section{
+  padding: 48px 0;
+}
+
+/* ---------- HEADER ---------- */
+
 .site-header{
   background: white;
   border-bottom: 1px solid var(--border);
@@ -36,11 +46,11 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 16px 0;
 }
 
 .brand{
-  font-weight: bold;
+  font-weight: 600;
   font-size: 15px;
 }
 
@@ -60,182 +70,162 @@ body{
   font-size: 14px;
 }
 
-.nav-links a:hover{
-  color: var(--text);
-}
+/* ---------- HERO ---------- */
 
-/* HERO */
 .hero{
-  padding: 40px 0;
+  padding: 50px 0 10px;
 }
 
 .hero-grid{
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   gap: 22px;
-  align-items: start;
+  align-items: stretch;   /* ✅ equal height columns */
 }
 
-/* CARDS */
+.hero-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-left .card{
+  flex: 1;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+h1{
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+h2{
+  margin: 0;
+  font-size: 18px;
+}
+
+p{
+  margin: 8px 0;
+}
+
+.muted{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- CARDS ---------- */
+
 .card{
-  background: white;
+  background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   margin-top: 18px;
-  padding: 18px 22px;
+  overflow: hidden;
 }
 
 .card-header{
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding: 18px 22px 12px;
   border-bottom: 1px solid var(--border);
 }
 
 .card-footer{
-  padding-top: 14px;
-  margin-top: 12px;
+  padding: 14px 22px 18px;
   border-top: 1px solid var(--border);
+  font-size: 14px;
 }
 
-/* ✅ TEXT WIDTH FIX */
-.card p{
-  max-width: 820px;
-  line-height: 1.75;
-  font-size: 15.5px;
-}
+/* ---------- IMAGES ---------- */
 
-/* Paragraph rhythm */
-.card p + p{
-  margin-top: 10px;
-}
-
-/* IMAGES */
 .img{
   width: 100%;
   display: block;
-  border-radius: 10px;
 }
 
-/* ✅ PAPER PANEL FIX (this is the key) */
+/* ---------- PDF PANEL ---------- */
+
 .paper-card{
-  /* remove the big padding so the iframe can fill */
-  padding: 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* keep header padded even though card padding is removed */
-.paper-card .card-header{
-  padding: 18px 22px 12px;
-  margin: 0;
-}
-
-/* the iframe takes the rest of the card height */
 .paper-frame{
   flex: 1;
   width: 100%;
   border: none;
-  border-radius: 0 0 var(--radius) var(--radius);
-
-  /* This makes it tall like you want */
-  height: 950px;
-
-  /* For Chrome/Safari to avoid weird shrink behavior */
-  min-height: 950px;
+  min-height: 0;
 }
 
-/* Keep .pdf class for other uses too */
-.pdf{
-  width: 100%;
-  border: none;
-}
+/* ---------- GRID SECTIONS ---------- */
 
-/* SECTIONS */
-.section{
-  padding: 40px 0;
-}
-
-.section-head h2{
-  margin-bottom: 6px;
-}
-
-.section-head p{
-  margin-top: 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* GRID */
 .two-col{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-}
-
-/* ✅ Equal height charts */
-.two-col.equal{
   align-items: stretch;
 }
 
-.two-col.equal .card{
+/* ---------- TEXT BLOCKS ---------- */
+
+.desc{
+  padding: 18px 22px 22px;
+  line-height: 1.65;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---------- BULLETS ---------- */
+
+.bullets{
+  margin: 10px 0 10px 22px;
+  padding-left: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.bullets li{
+  margin-bottom: 6px;
+}
+
+/* ---------- CALLOUT ---------- */
+
+.callout{
+  margin: 16px 22px 22px;
+  padding: 14px 16px;
+  background: #fff5f5;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ---------- CHART BALANCE ---------- */
+
+.chart-card{
   display: flex;
   flex-direction: column;
 }
 
-.desc{
-  max-width: 820px;
-  padding-top: 14px;
-  line-height: 1.7;
-  font-size: 14.8px;
-  color: var(--muted);
-  margin-top: auto;
+.chart-card img{
+  width: 100%;
+  display: block;
 }
 
-/* LISTS */
-.bullets{
-  max-width: 820px;
-  margin: 12px 0 14px 18px;
-  line-height: 1.8;
-}
+/* ---------- RESPONSIVE ---------- */
 
-.bullets li{
-  margin: 4px 0;
-}
+@media (max-width: 900px){
 
-/* CALLOUT */
-.callout{
-  max-width: 820px;
-  margin-top: 16px;
-  padding: 14px 16px;
-  background: #fff5f5;
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  font-size: 14.8px;
-}
+  .hero-grid{
+    grid-template-columns: 1fr;
+  }
 
-/* BUTTONS */
-.button{
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-}
+  .two-col{
+    grid-template-columns: 1fr;
+  }
 
-.button-outline{
-  border: 1px solid var(--border);
-  color: var(--text);
-  background: white;
-}
+  h1{
+    font-size: 26px;
+  }
 
-.button-outline:hover{
-  background: var(--bg);
-}
-
-/* STICKY paper card */
-.sticky{
-  position: sticky;
-  top: 90px;
 }
