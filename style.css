@@ -123,6 +123,7 @@ body{
   padding: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* ✅ ONLY addition: keeps rounded corners clean */
 }
 
 /* keep header padded even though card padding is removed */
@@ -138,11 +139,9 @@ body{
   border: none;
   border-radius: 0 0 var(--radius) var(--radius);
 
-  /* This makes it tall like you want */
-  height: 950px;
-
-  /* For Chrome/Safari to avoid weird shrink behavior */
-  min-height: 950px;
+  /* ✅ CHANGED ONLY THIS PART: make paper height reasonable + responsive */
+  height: min(720px, calc(100vh - 180px));
+  min-height: 520px;
 }
 
 /* Keep .pdf class for other uses too */
